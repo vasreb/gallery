@@ -1,0 +1,15 @@
+.modal-photo {
+    position: fixed;
+    width: 9099px;
+    height: 9099px;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.22);
+}
+
+.modal-photo__img {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}

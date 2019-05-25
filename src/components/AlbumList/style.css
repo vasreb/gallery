@@ -1,0 +1,13 @@
+.album-list {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 150px;
+    border: 5px solid #DDD;
+    border-radius: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}

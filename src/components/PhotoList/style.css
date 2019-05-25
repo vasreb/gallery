@@ -1,0 +1,33 @@
+.photo-list {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-list__list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    grid-row-gap: 20px;
+}
+
+
+@media (max-width: 1600px) {
+    .photo-list__list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 980px) {
+    .photo-list__list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 660px) {
+    .photo-list__list {
+        grid-template-columns: 1fr;
+    }
+}

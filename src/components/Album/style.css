@@ -1,0 +1,23 @@
+.album {
+    background-color: #FAEBD7;
+    height: 100px;
+    width: 100px;
+    margin: 0px 10px;
+}
+
+.album__title {
+    text-align: center;
+    font-size: 14px;
+    font-family: Roboto;
+}
+
+.album--selected {
+    background-color: rgb(255, 212, 155);
+    height: 100px;
+    width: 100px;
+    margin: 0px 10px;
+}
+
+.album:hover {
+    transform: scale(1.1);
+}

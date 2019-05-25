@@ -1,0 +1,10 @@
+.photo-card {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    padding: 20px 10px;
+    width: 200px;
+    flex-direction: column;
+    align-items: center;
+    background-color: AliceBlue;
+}
