@@ -3,7 +3,16 @@ import './style.css';
 import selectAlbum from './../../actions/selectAlbum';
 import PropTypes from 'prop-types';
 
-export default class Album extends React.PureComponent {
+export default class Album extends React.Component {
+    shouldComponentUpdate(nextProps) {
+        if (nextProps.currentAlbumId === this.props.albumId) {
+            return true
+        }
+        if (this.props.currentAlbumId === this.props.albumId) {
+            return true
+        }
+        return false
+    }
     render() {
         const { albumId, dispatch, currentAlbumId } = this.props; 
         const albumChange = () => {
