@@ -18,8 +18,8 @@ function Photo(props) {
         }))
     }
     return (
-        <div className="photo-card" onClick={renderModalPhoto}>
-            <img className="photo-card__img" src={thumbnailUrl} alt={title}/>
+        <div className="photo-card">
+            <img className="photo-card__img" src={thumbnailUrl} alt={title} onClick={renderModalPhoto}/>
             <p className="photo-card__title">{title}</p>
         </div>
     )

@@ -35,6 +35,9 @@
 .users__title--button {
     color: Blue;
 }
+.users__title--button:hover {
+    opacity: 0.5;
+}
 
 
 @media (max-width: 1500px) {
