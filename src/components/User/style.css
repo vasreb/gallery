@@ -18,3 +18,8 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@media (max-width: 600px) {
+    .user-card {
+        transform: scale(0.9);
+    }
+}

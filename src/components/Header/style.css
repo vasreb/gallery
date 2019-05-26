@@ -1,6 +1,7 @@
 .header {
     position: sticky;
     margin: 0;
+    padding: 0;
     top: 0;
     list-style: none;
     height: 50px;
@@ -9,6 +10,7 @@
     justify-content: space-around;
     align-items: center;
     border-bottom: 2px solid AntiqueWhite;
+    z-index: 100;
 }
 
 .header__link {
