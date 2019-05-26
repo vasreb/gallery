@@ -9,7 +9,7 @@ class Users extends React.Component {
         this.load();
     }
 
-    load() {
+    load = () => {
         this.props.dispatch(fetchData('https://jsonplaceholder.typicode.com/users', 'users'));
     }
 
