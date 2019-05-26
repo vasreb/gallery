@@ -5,21 +5,25 @@ import {
 } from './../constants/constants';
 
 export default function fetchPhotos(id) {
-    return dispatch => {
+    return async dispatch => {
         dispatch({
             type: GET_PHOTOS_REQUEST,
             payload: +id
         })
         //sends id to change currentAlbumId
-        fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${id}`)
-        .then(res => res.json())
-        .then(res => dispatch({
-                type: GET_PHOTOS_SUCCESS,
-                payload: res
-            }))
-        .catch(err => dispatch({
-            type: GET_PHOTOS_ERROR,
-            payload: err
-        }))
+        try {
+            let res = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${id}`)
+            res = await res.json();
+            dispatch({
+                    type: GET_PHOTOS_SUCCESS,
+                    payload: res
+            })
+        }   
+        catch (err) {
+            dispatch({
+                type: GET_PHOTOS_ERROR,
+                payload: err
+            })
+        }
     }
 }
