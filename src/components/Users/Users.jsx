@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './style.css';
 import User from './../User/User.jsx';
-import fetchUsers from './../../actions/fetchUsers';
+import fetchData from './../../actions/fetchData';
 
 class Users extends React.Component {
     componentDidMount() {
@@ -10,7 +10,7 @@ class Users extends React.Component {
     }
 
     load() {
-        this.props.dispatch(fetchUsers());
+        this.props.dispatch(fetchData('https://jsonplaceholder.typicode.com/users', 'users'));
     }
 
     render() {

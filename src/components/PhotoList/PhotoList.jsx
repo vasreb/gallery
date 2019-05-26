@@ -2,7 +2,7 @@ import React from 'react';
 import {Component} from 'react';
 import './style.css';
 import Photo from './../Photo/Photo';
-import fetchPhotos from './../../actions/fetchPhotos';
+import fetchData from './../../actions/fetchData';
 import PropTypes from 'prop-types';
 
 export default class PhotoList extends Component {
@@ -12,7 +12,9 @@ export default class PhotoList extends Component {
 
     load = () => {
         const { dispatch, currentAlbumId } = this.props;
-        dispatch(fetchPhotos(currentAlbumId));
+        dispatch(fetchData(`https://jsonplaceholder.typicode.com/photos?albumId=${currentAlbumId}`,
+        'photos',
+        currentAlbumId));
     }
 
     render() {

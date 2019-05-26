@@ -1,16 +1,19 @@
 import {
-    GET_USERS_REQUEST, 
-    GET_USERS_SUCCESS,
-    GET_USERS_ERROR
+    GET_REQUEST, 
+    GET_SUCCESS,
+    GET_ERROR
 } from './../constants/constants';
 
 export default function users(state=[], action) {
     switch(action.type) {
-        case GET_USERS_REQUEST:
+        case GET_REQUEST:
             return []
-        case GET_USERS_SUCCESS:
-            return [].concat(action.payload)
-        case GET_USERS_ERROR:
+        case GET_SUCCESS:
+            if (action.typeOfRequest === 'users') {
+                return [].concat(action.payload)
+            }
+            return []
+        case GET_ERROR:
             return []
         default: 
             return state;

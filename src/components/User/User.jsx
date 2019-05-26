@@ -14,7 +14,6 @@ export default function User(props) {
 
     const usi = 'user-card__item';
     const usil = 'user-card__item user-card__item--little';
-
     return (
         <ul className="user-card">
             <li className={usi}>Name: {name}</li>

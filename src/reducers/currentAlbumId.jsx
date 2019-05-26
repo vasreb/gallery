@@ -1,11 +1,14 @@
 import {
-    GET_PHOTOS_REQUEST
+    GET_REQUEST
 } from './../constants/constants';
 
 export default function isLoading(state=1, action) {
     switch (action.type) {
-        case GET_PHOTOS_REQUEST:
-            return action.payload;
+        case GET_REQUEST:
+            if (action.payload) {
+                return +action.payload;
+            }
+            return state;
         default:
             return state;
     }

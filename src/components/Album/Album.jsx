@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
-import fetchPhotos from './../../actions/fetchPhotos';
+import fetchData from './../../actions/fetchData';
 
 export default class Album extends React.Component {
     shouldComponentUpdate(nextProps) {
@@ -16,7 +16,9 @@ export default class Album extends React.Component {
     render() {
         const { albumId, dispatch, currentAlbumId } = this.props; 
         const albumChange = () => {
-            dispatch(fetchPhotos(albumId));
+            dispatch(fetchData(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`,
+            'photos',
+            albumId));
         }
         console.log('rerender');
         return (
