@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
-import selectAlbum from './../../actions/selectAlbum';
 import PropTypes from 'prop-types';
+import fetchPhotos from './../../actions/fetchPhotos';
 
 export default class Album extends React.Component {
     shouldComponentUpdate(nextProps) {
@@ -16,7 +16,7 @@ export default class Album extends React.Component {
     render() {
         const { albumId, dispatch, currentAlbumId } = this.props; 
         const albumChange = () => {
-            dispatch(selectAlbum(albumId));
+            dispatch(fetchPhotos(albumId));
         }
         console.log('rerender');
         return (

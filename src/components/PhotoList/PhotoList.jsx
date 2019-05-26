@@ -7,12 +7,26 @@ import PropTypes from 'prop-types';
 
 export default class PhotoList extends Component {
     componentDidMount() {
-        const { dispatch } = this.props;
-        dispatch(fetchPhotos('photos?albumId=1'));
+        this.load()
+    }
+
+    load = () => {
+        const { dispatch, currentAlbumId } = this.props;
+        dispatch(fetchPhotos(currentAlbumId));
     }
 
     render() {
-        const { isLoading, photos } = this.props;
+        const { isLoading, photos, isError, currentAlbumId } = this.props;
+
+        if (isError.isError) {
+            return ( 
+            <div className="photo-list">
+                <h2 className="photo-list__title">Oops! This is error:</h2>
+                <p className="photo-list__title--error">{isError.error.toString()}</p>
+                <h2 className="photo-list__title--button" onClick={this.load}>Press to try again</h2>
+            </div> 
+            )
+        }
 
         const photoLis = photos.map(photo => 
         <li key={photo.id} className="photo-list__item">
@@ -29,7 +43,7 @@ export default class PhotoList extends Component {
             <div className="photo-list">
                 <h2 className="photo-list__title">
                 {isLoading ? 'Photos are loading...' : photos[0] 
-                ? `Album №${photos[0].albumId}` : ''}
+                ? `Album №${currentAlbumId}` : ''}
                 </h2>
                 <ul className="photo-list__list">
                     {photoLis}

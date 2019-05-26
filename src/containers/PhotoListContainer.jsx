@@ -2,10 +2,12 @@ import { connect } from 'react-redux';
 import PhotoList from './../components/PhotoList/PhotoList';
 
 function mapStateToProps (state) {
-    const {photos, isLoading} = state;
+    const {photos, isLoading, isError, currentAlbumId} = state;
     return {
         photos,
-        isLoading
+        isLoading,
+        isError,
+        currentAlbumId
     }
 }
 

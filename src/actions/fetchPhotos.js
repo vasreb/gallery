@@ -4,12 +4,14 @@ import {
     GET_PHOTOS_ERROR
 } from './../constants/constants';
 
-export default function fetchPhotos(get_request) {
+export default function fetchPhotos(id) {
     return dispatch => {
         dispatch({
             type: GET_PHOTOS_REQUEST,
+            payload: +id
         })
-        fetch(`https://jsonplaceholder.typicode.com/${get_request}`)
+        //sends id to change currentAlbumId
+        fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${id}`)
         .then(res => res.json())
         .then(res => dispatch({
                 type: GET_PHOTOS_SUCCESS,

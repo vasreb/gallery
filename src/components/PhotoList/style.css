@@ -13,6 +13,23 @@
     grid-row-gap: 20px;
 }
 
+.photo-list__title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.photo-list__title--error {
+    font-size: 15px;
+    color: OrangeRed;
+}
+
+.photo-list__title--button {
+    color: Blue;
+}
+
+.photo-list__title--button:hover {
+    opacity: 0.5;
+}
 
 @media (max-width: 1600px) {
     .photo-list__list {
