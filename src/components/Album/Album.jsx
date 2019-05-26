@@ -2,6 +2,8 @@ import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
 import fetchData from './../../actions/fetchData';
+import { Link } from 'react-router-dom';
+
 
 export default class Album extends React.Component {
     shouldComponentUpdate(nextProps) {
@@ -20,14 +22,14 @@ export default class Album extends React.Component {
             'photos',
             albumId));
         }
-        console.log('rerender');
         return (
-            <div 
-            className={currentAlbumId === albumId ? 'album--selected album' : 'album'}
-            onClick={currentAlbumId !== albumId ? albumChange : () => {}}
-            >
-                <h2 className="album__title">Album Id: {albumId}</h2>
-            </div>
+            <Link onClick={currentAlbumId !== albumId ? albumChange : () => {}} to={`/gallery/${albumId}`} className="album__title">
+                <div 
+                className={currentAlbumId === albumId ? 'album--selected album' : 'album'}
+                >
+                    <h2 className="album__title">Album Id: {albumId}</h2>
+                </div>
+            </Link>
         )
     }
 }

@@ -9,6 +9,9 @@
     text-align: center;
     font-size: 14px;
     font-family: Roboto;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
 }
 
 .album--selected {

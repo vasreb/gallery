@@ -6,6 +6,7 @@ import fetchData from './../../actions/fetchData';
 import PropTypes from 'prop-types';
 
 export default class PhotoList extends Component {
+    
     componentDidMount() {
         this.load()
     }

@@ -9,11 +9,11 @@ const albums = [];
         albums.push({albumId: i});
   }
 
-export default function Gallery() {
+export default function Gallery(props) {
   return (
       <div className="gallery">
-        <AlbumList albums={albums}/>
-        <PhotoListContainer />
+        <AlbumList albums={albums} />
+        <PhotoListContainer albumId={props.match.params.album}/>
         <ModalPhotoContainer />
       </div>
   );
