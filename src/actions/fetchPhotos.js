@@ -15,8 +15,8 @@ export default function fetchPhotos(id) {
             let res = await fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${id}`)
             res = await res.json();
             dispatch({
-                    type: GET_PHOTOS_SUCCESS,
-                    payload: res
+                type: GET_PHOTOS_SUCCESS,
+                payload: res
             })
         }   
         catch (err) {

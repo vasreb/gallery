@@ -1,28 +1,23 @@
 import React from 'react';
 import './App.css';
-import AlbumList from './../AlbumList/AlbumList';
-import PhotoListContainer from './../../containers/PhotoListContainer';
+import Gallery from '../Gallery/Gallery.jsx';
 import { Provider } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
 import store from './../../store/store';
-import ModalPhotoContainer from './../../containers/ModalPhotoContainer';
+import Header from './../Header/Header.jsx';
+import Users from './../Users/Users.jsx';
 
-const albums = [];
-    for (let i = 1; i <= 100; i++) {
-        albums.push({albumId: i});
-  }
-
-function App() {
+export default function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <AlbumList albums={albums}/>
-        <PhotoListContainer />
-        <ModalPhotoContainer />
-      </div>
+      <Header />
+        <main>
+          <Switch>
+            <Route exact path='/' component={Gallery}/>
+            <Route path='/gallery' component={Gallery}/>
+            <Route path='/users' component={Users}/>
+          </Switch>
+        </main>
     </Provider>
   );
 }
-
-export default App;
-
-

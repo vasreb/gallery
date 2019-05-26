@@ -7,4 +7,5 @@
     flex-direction: column;
     align-items: center;
     background-color: AliceBlue;
+    border: 2px solid Olive;
 }
