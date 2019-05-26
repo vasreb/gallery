@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import selectAlbum from './../../actions/selectAlbum';
+import PropTypes from 'prop-types';
 
 export default class Album extends React.PureComponent {
     render() {
@@ -18,4 +19,11 @@ export default class Album extends React.PureComponent {
             </div>
         )
     }
+}
+
+
+Album.propTypes = {
+    albumId: PropTypes.number.isRequired,
+    dispatch: PropTypes.func.isRequired,
+    currentAlbumId: PropTypes.number.isRequired
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import closeModalPhoto from './../../actions/closeModalPhoto';
+import PropTypes from 'prop-types';
 
 export default function ModalPhoto(props) {
     const closeWindow = () => {
@@ -16,3 +17,7 @@ export default function ModalPhoto(props) {
     } else return '';
 }
 
+ModalPhoto.propTypes = {
+    url: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired
+}

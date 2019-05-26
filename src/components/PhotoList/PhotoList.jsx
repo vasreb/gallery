@@ -3,6 +3,7 @@ import {Component} from 'react';
 import './style.css';
 import Photo from './../Photo/Photo';
 import fetchPhotos from './../../actions/fetchPhotos';
+import PropTypes from 'prop-types';
 
 export default class PhotoList extends Component {
     componentDidMount() {
@@ -13,7 +14,7 @@ export default class PhotoList extends Component {
     render() {
         const { isLoading, photos } = this.props;
 
-        const photoLis = this.props.photos.map(photo => 
+        const photoLis = photos.map(photo => 
         <li key={photo.id} className="photo-list__item">
             <Photo 
             id={photo.id} 
@@ -36,4 +37,15 @@ export default class PhotoList extends Component {
             </div>
         )
     }
+}
+
+PhotoList.propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    photos: PropTypes.arrayOf(PropTypes.shape({
+        albumId: PropTypes.number.isRequired,
+        id: PropTypes.number.isRequired,
+        url: PropTypes.string.isRequired,
+        thumbnailUrl: PropTypes.string.isRequired
+    }))
 }

@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './style.css';
+import PropTypes from 'prop-types';
 import openModalPhoto from './../../actions/openModalPhoto';
+
 
 function Photo(props) {
     const {
@@ -12,7 +14,7 @@ function Photo(props) {
     const renderModalPhoto = () => {
         props.dispatch(openModalPhoto({
             url,
-            title
+            alt: title
         }))
     }
     return (
@@ -32,3 +34,11 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapDispatchToProps
 )(Photo);
+
+
+Photo.propTypes = {
+    albumId: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    url: PropTypes.string.isRequired,
+    thumbnailUrl: PropTypes.string.isRequired
+}

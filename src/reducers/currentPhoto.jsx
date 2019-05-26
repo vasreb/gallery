@@ -3,7 +3,7 @@ import {
     CLOSE_MODAL_PHOTO
 } from './../constants/constants';
 
-export default function photos(state={}, action) {
+export default function photos(state={url: 'proptypesfix', alt: 'proptypesfix'}, action) {
     switch (action.type) {
         case OPEN_MODAL_PHOTO:
             return Object.assign({}, state, action.payload)
